@@ -23,7 +23,10 @@ def pibooth_configure(cfg):
     cfg.add_option(SECTION, 'is_rolling_photo', False,
                    "Enable rolling photo at the end")
     cfg.add_option(SECTION, 'pausing_time', '5',
-                   "Time to showing picture between tow displaying")
+                   "Pause beteween tow photo if plugin is enabled")
+    
+    cfg.add_option(SECTION, 'timeout_last_photo', '5',
+                   "timeout to show the last photo took before rolling")
 
 @pibooth.hookimpl
 def pibooth_startup(app, cfg):
